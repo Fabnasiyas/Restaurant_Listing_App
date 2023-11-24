@@ -49,15 +49,15 @@ const RestaurantsListSection = () => {
               <div className="mt-4 flex">
                
                 
-                  <Link to={`/booking/${restaurant._id}`}>
+                  <Link to={`/update/${restaurant._id}`}>
                     <button className="px-4 py-1 bg-blue-900 hover:bg-blue-600 text-white">
-                      Book Now
+                      Update
                     </button>
                   </Link>
                 
-                <Link to={`/viewrestaurant/${restaurant._id}`}>
+                <Link to={`/delete/${restaurant._id}`}>
                   <button className="px-4 py-1 bg-yellow-400 hover:bg-yellow-500 text-white">
-                    View Details
+                    Delete
                   </button>
                 </Link>
               </div>

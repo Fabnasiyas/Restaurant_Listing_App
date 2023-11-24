@@ -24,8 +24,9 @@ const Restaurant = sequelize.define("Restaurant", {
             notEmpty: true
         }
     },
+    
     Contact_info: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
         validate: {
             notEmpty: true
