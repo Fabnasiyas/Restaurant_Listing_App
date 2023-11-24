@@ -1,10 +1,17 @@
 import logo from './logo.svg';
+import { Link } from 'react-router-dom';
+import Home from './Pages/HomePage.jsx';
 import './App.css';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <>
-    <h1 className='text-12xl font-bold text-blue-900 underline'>Welcome Home</h1>
+    <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+   </Routes>
+   </Router>
+    
     </>
   );
 }

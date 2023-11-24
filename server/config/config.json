@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "rest_user",
+    "password": "rest_password",
+    "database": "RestaurantDB",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "rest_user",
+    "password": "rest_password",
+    "database": "database_test",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "rest_user",
+    "password": "rest_password",
+    "database": "database_production",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
