@@ -31,13 +31,13 @@ const Restaurant = sequelize.define("Restaurant", {
             notEmpty: true
         }
     },
-    image: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true
-        }
-    }
+    // image: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     validate: {
+    //         notEmpty: true
+    //     }
+    // }
 });
 
 export { sequelize, Restaurant };
