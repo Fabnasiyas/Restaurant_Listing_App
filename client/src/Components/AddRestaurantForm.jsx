@@ -94,7 +94,7 @@ const AddRestaurantForm = () => {
               }`}
             />
             {formErrors.Name && (
-              <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>
+              <p className="text-red-500 text-sm mt-1">{formErrors.Name}</p>
             )}
           </div>
 
@@ -114,7 +114,7 @@ const AddRestaurantForm = () => {
               }`}
             />
             {formErrors.Address && (
-              <p className="text-red-500 text-sm mt-1">{formErrors.address}</p>
+              <p className="text-red-500 text-sm mt-1">{formErrors.Address}</p>
             )}
           </div>
 

@@ -5,7 +5,21 @@ import axios from '../Utils/axios.js';
 const RestaurantsListSection = () => {
 
   const [restaurants, setRestaurants] = useState([]);
-
+ 
+  const deleteRestaurant=async(restaurantId)=>{
+    try {
+      const response = await axios.delete(`/deleteRestaurant/${restaurantId}`);
+          console.log('Delete response:', response);
+          if (!response.data.err) {
+            setRestaurants((prevRestaurants) =>
+              prevRestaurants.filter((restaurant) => restaurant._id !== restaurantId)
+            );
+          }
+          window.location.reload();
+        } catch (error) {
+          console.error('Error deleting restaurant:', error);
+        }
+    }
   const fetchRestaurantDetails = async () => {
     try {
       const response = await axios.get('/getAllRestaurant');
@@ -20,7 +34,7 @@ const RestaurantsListSection = () => {
   };
 
   useEffect(() => {
-    fetchRestaurantDetails();
+    fetchRestaurantDetails()
   }, []);
 
   return (
@@ -37,17 +51,16 @@ const RestaurantsListSection = () => {
               <div className="mt-4 flex">
 
 
-                <Link to={`/update/${restaurant._id}`}>
+                <Link to={`/update/${restaurant.id}`}>
                   <button className="px-4 py-1 bg-blue-900 hover:bg-blue-600 text-white">
                     Update
                   </button>
                 </Link>
 
-                <Link to={`/delete/${restaurant._id}`}>
-                  <button className="px-4 py-1 bg-yellow-400 hover:bg-yellow-500 text-white">
+                  <button className="px-4 py-1 bg-yellow-400 hover:bg-yellow-500 text-white" onClick={()=>deleteRestaurant(restaurant.id)}>
                     Delete
                   </button>
-                </Link>
+
               </div>
             </div>
           </div>
