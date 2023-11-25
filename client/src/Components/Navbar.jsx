@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div>
-      <nav className="shadow-md" style={{ height: '100px', backgroundColor: '#5e130e', color: '#ffffff' }}>
+      <nav className="shadow-md" style={{ height: '100px', backgroundColor: '#352F44', color: '#ffffff' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center mt-10">
@@ -16,18 +16,18 @@ const Navbar = () => {
             </div>
             <div className="hidden md:block mt-10">
               <div className="flex items-center space-x-4">
-                <Link to="/" className="text-white focus:outline-none focus:text-blue-700 focus:ring-4 focus:ring-gray-200">
-                  <span className="py-2.5 px-5 text-sm font-medium hover:bg-gray-600 hover:text-blue-700 rounded-full">
+                <Link to="/" className="text-[#FAF0E6]">
+                  <span className="py-2.5 px-5 text-sm font-medium hover:bg-gray-600  rounded-full">
                     Home
                   </span>
                 </Link>
-                <Link to="/" className="text-white focus:outline-none focus:text-blue-700 focus:ring-4 focus:ring-gray-200">
-                  <span className="py-2.5 px-5 text-sm font-medium hover:bg-gray-600 hover:text-blue-700 rounded-full">
+                <Link to="/" className="text-[#FAF0E6]">
+                  <span className="py-2.5 px-5 text-sm font-medium hover:bg-gray-600  rounded-full">
                     About Us
                   </span>
                 </Link>
-                <Link to="/" className="text-white focus:outline-none focus:text-blue-700 focus:ring-4 focus:ring-gray-200">
-                  <span className="py-2.5 px-5 text-sm font-medium hover:bg-gray-600 hover:text-blue-700 rounded-full">
+                <Link to="/" className="text-[#FAF0E6]">
+                  <span className="py-2.5 px-5 text-sm font-medium hover:bg-gray-600  rounded-full">
                     Contact Us
                   </span>
                 </Link>

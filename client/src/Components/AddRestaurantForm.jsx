@@ -1,7 +1,8 @@
-
 import React, { useState } from 'react';
 import axios from '../Utils/axios.js';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddRestaurantForm = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,6 @@ const AddRestaurantForm = () => {
       [name]: value,
     });
 
-    
     setFormErrors({
       ...formErrors,
       [name]: '',
@@ -33,7 +33,6 @@ const AddRestaurantForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Client-side validation
     const errors = validateForm(formData);
     if (Object.values(errors).some((error) => error !== '')) {
       setFormErrors(errors);
@@ -43,12 +42,29 @@ const AddRestaurantForm = () => {
     try {
       const response = await axios.post('/addRestaurants', formData);
       console.log('Form submission successful:', response.data);
+
+      toast.success('Restaurant added successfully', {
+        position:  'top-center',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+
+      navigate('/');
     } catch (error) {
       console.error('Error submitting form:', error);
-    }
 
-    console.log('Form submitted:', formData);
-    navigate('/');
+      toast.error('Incorrect form Values', {
+        position:  'top-center',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
   };
 
   const validateForm = (data) => {
@@ -67,7 +83,11 @@ const AddRestaurantForm = () => {
     }
 
     if (!data.Contact_info.trim()) {
+      console.log('nodataaaaaaaaa');
       errors.Contact_info = 'Contact Info is required';
+    } else if (data.Contact_info.trim().length !== 10) {
+      console.log('infoe errorrrrrr');
+      errors.Contact_info = 'Enter exactly 10 characters';
     }
 
     return errors;

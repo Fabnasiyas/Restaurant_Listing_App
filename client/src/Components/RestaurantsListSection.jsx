@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import restaurantImage from '../assets/Banner2.jpg';
+import restaurantImage from '../assets/b2.jpg';
 import axios from '../Utils/axios.js';
 const RestaurantsListSection = () => {
 
@@ -39,25 +39,25 @@ const RestaurantsListSection = () => {
 
   return (
     <div className="text-center mb-10">
-      <h1 className="text-3xl font-semibold mt-10 mb-10 text-blue-900">Our Restaurants</h1>
+      <h1 className="text-3xl font-semibold mt-10 mb-10 text-[#352F44]">Our Restaurants</h1>
       <div className="flex flex-wrap justify-center mt-6">
         {restaurants.map((restaurant) => (
           <div key={restaurant._id} className="flex flex-col items-center max-w-xs bg-white shadow-md rounded-lg overflow-hidden mx-4 my-4">
             <img src={restaurantImage} alt={`restaurantImage`} className="object-cover w-full h-40" />
             <div className="flex flex-col items-center p-4 mb-4">
-              <h2 className="text-lg font-semibold text-center text-blue-900">{restaurant.Name}</h2>
-              <p className="mt-2 text-blue-900">Address: {restaurant.Address}</p>
-              <p className="mt-2 text-blue-900">Contact Info: {restaurant.Contact_info}</p>
-              <div className="mt-4 flex">
+              <h2 className="text-lg font-semibold text-center text-[#352F44]">{restaurant.Name}</h2>
+              <p className="mt-2 text-[#352F44]">Address: {restaurant.Address}</p>
+              <p className="mt-2 text-[#352F44]">Contact Info: {restaurant.Contact_info}</p>
+              <div className="mt-4 flex ">
 
 
                 <Link to={`/update/${restaurant.id}`}>
-                  <button className="px-4 py-1 bg-blue-900 hover:bg-blue-600 text-white">
+                  <button className="px-4 py-1 bg-[#5C5470] hover:bg-[#352F44] hover:text-white text-[#FAF0E6] mr-2">
                     Update
                   </button>
                 </Link>
 
-                  <button className="px-4 py-1 bg-yellow-400 hover:bg-yellow-500 text-white" onClick={()=>deleteRestaurant(restaurant.id)}>
+                  <button className="px-4 py-1 bg-[#B9B4C7] hover:bg-[#352F44] hover:text-white text-[#352F44]" onClick={()=>deleteRestaurant(restaurant.id)}>
                     Delete
                   </button>
 
