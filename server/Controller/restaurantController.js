@@ -1,14 +1,16 @@
 import { Restaurant } from '../models/restaurantModel.mjs';
-export const getAllRestaurants=async ()=>{
+export const getAllRestaurants = async (req,res) => {
+    console.log('vghvhvhghhhghggu');
     try {
-       console.log('====================================');
-       console.log('vghvhvhghhhghggu');
-       console.log('===================================='); 
+        const allRestaurants = await Restaurant.findAll();
+        console.log(allRestaurants);
+        res.json(allRestaurants)
+
     } catch (error) {
-        
+        console.error('Error retrieving restaurants:', error);
     }
 }
-export const AddRestaurant=async(req,res)=>{
+export const AddRestaurant = async (req, res) => {
     console.log('welcomeeee');
     console.log(req.body);
     try {
@@ -17,11 +19,11 @@ export const AddRestaurant=async(req,res)=>{
             Name,
             Address,
             Contact_info,
-          });
-          console.log('successfully Inserted data:', createdRestaurant);
-          res.status(201).json({ success: true, message: 'Data inserted successfully' });
+        });
+        console.log('successfully Inserted data:', createdRestaurant);
+        res.status(201).json({ success: true, message: 'Data inserted successfully' });
     } catch (error) {
         console.error('Error:', error);
-        res.status(500).json({ success: false, message: 'Internal Server Error' });   
+        res.status(500).json({ success: false, message: 'Internal Server Error' });
     }
 }

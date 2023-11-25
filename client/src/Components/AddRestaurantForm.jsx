@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import axios from '../Utils/axios.js';
+import { useNavigate } from 'react-router-dom';
 
 const AddRestaurantForm = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +9,7 @@ const AddRestaurantForm = () => {
     Address: '',
     Contact_info: '',
   });
-
+  const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({
     Name: '',
     Address: '',
@@ -47,6 +48,7 @@ const AddRestaurantForm = () => {
     }
 
     console.log('Form submitted:', formData);
+    navigate('/');
   };
 
   const validateForm = (data) => {
@@ -132,7 +134,7 @@ const AddRestaurantForm = () => {
               }`}
             />
             {formErrors.Contact_info && (
-              <p className="text-red-500 text-sm mt-1">{formErrors.contactInfo}</p>
+              <p className="text-red-500 text-sm mt-1">{formErrors.Contact_info}</p>
             )}
           </div>
 
